@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinSight - Bank Statement Intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 20V10m5 10V7m5 13V4m5 16v-7"/><path d="m3 8 5-4 5 2 7-4"/></svg>
+      </span>
+      <span>FinSight</span>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="nav-item active" data-page="overview">
+        <svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
+        <span>Overview</span>
+      </button>
+      <button class="nav-item" data-page="upload">
+        <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5"/><path d="M4 15v5h16v-5"/></svg>
+        <span>Upload Statement</span>
+      </button>
+      <button class="nav-item" data-page="transactions">
+        <svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r=".8"/><circle cx="3.5" cy="12" r=".8"/><circle cx="3.5" cy="18" r=".8"/></svg>
+        <span>Transactions</span>
+      </button>
+      <button class="nav-item" data-page="budget">
+        <svg viewBox="0 0 24 24"><path d="M4 20V10m5 10V6m5 14v-8m5 8V3"/></svg>
+        <span>Budget Insights</span>
+      </button>
+      <button class="nav-item" data-page="guidance">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2"/></svg>
+        <span>AI Guidance</span>
+      </button>
+      <button class="nav-item" data-page="counsellor">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 20c.5-4 2.5-6 6-6s5.5 2 6 6M15 15c3-.5 5 1 5.5 4"/></svg>
+        <span>Counsellor Analytics</span>
+      </button>
+      <button class="nav-item" data-page="settings">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-2.6V20a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L7.6 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 6.4 14h-.2v-2.6h.2A1.7 1.7 0 0 0 8 10.4a1.7 1.7 0 0 0-.3-1.9L7.6 8l1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 12.4 5v-.2H15V5a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 8l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2V14H21a1.7 1.7 0 0 0-1.6 1Z"/></svg>
+        <span>Settings</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="top-title">
+        <strong>FinSight</strong>
+        <span>AI-Powered Bank Statement Intelligence</span>
+      </div>
+      <div class="top-actions">
+        <button class="demo-button" id="demo">DEMO DATA</button>
+        <button class="icon-button" aria-label="Notifications">
+          <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+        </button>
+        <button class="icon-button" aria-label="Profile">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="page active" id="page-overview">
+        <div class="page-heading">
+          <h1>Welcome to <span>FinSight</span></h1>
+          <p>Turn your bank statements into clear insights, budget guidance, and early risk alerts - with secure, AWS-native processing.</p>
+        </div>
+        <div class="overview-card">
+          <div class="illustration" aria-hidden="true">
+            <div class="chart-screen"><i></i><i></i><i></i><i></i></div>
+            <div class="shield"><span>₹</span></div>
+          </div>
+          <h2>Upload your bank statement</h2>
+          <label class="dropzone" id="dropzone">
+            <input type="file" id="file" accept=".csv,.txt">
+            <div class="upload-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5"/><path d="M4 15v5h16v-5"/></svg>
+            </div>
+            <strong>Drag and drop your statement here</strong>
+            <small>or</small>
+            <span class="choose-button">
+              <svg viewBox="0 0 24 24"><path d="M3 7h6l2-2h10v14H3z"/></svg>
+              Choose file
+            </span>
+            <em>Supported formats: CSV, PDF, PNG, JPG (Max 10 MB)</em>
+          </label>
+          <div class="trust-row">
+            <span><i class="lock-icon"></i>Encrypted storage</span>
+            <span><i class="shield-icon"></i>Secure processing (AWS KMS)</span>
+            <span><i class="bolt-icon"></i>Auto analysis</span>
+          </div>
+        </div>
+        <div class="overview-card recent-card">
+          <div class="card-title-row">
+            <h2><span class="clock-icon">↺</span>Recent Analyses</h2>
+            <button class="text-button" data-go="transactions">View All →</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Date</th><th>Statement</th><th>Period</th><th>Risk Level</th><th>Status</th></tr></thead>
+              <tbody id="recent-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" id="page-budget">
+        <div class="content-heading">
+          <div><h1>Your Financial Overview</h1><p id="analysis-period">Analysis for Sep 2026 (statement_oct.pdf)</p></div>
+          <button class="date-button">▣ <span id="date-label">Sep 2026</span>⌄</button>
+        </div>
+        <div class="metric-grid" id="metrics"></div>
+        <div class="chart-grid">
+          <article class="panel">
+            <h2>Spending by Category</h2>
+            <div class="category-chart">
+              <div class="donut" id="donut"><div><strong id="donut-total">₹0</strong><span>Total</span></div></div>
+              <div class="legend" id="category-legend"></div>
+            </div>
+          </article>
+          <article class="panel">
+            <h2>Income vs Expenses</h2>
+            <div class="bar-chart">
+              <div class="chart-legend"><span class="income-dot"></span>Income <span class="expense-dot"></span>Expenses</div>
+              <div class="bars" id="income-bars"></div>
+            </div>
+          </article>
+        </div>
+        <article class="insight-banner" id="insight-banner"></article>
+        <article class="panel transactions-panel">
+          <div class="card-title-row"><h2><span class="list-icon">☷</span>Recent Transactions</h2><button class="text-button" data-go="transactions">View All →</button></div>
+          <div class="table-wrap"><table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Amount</th></tr></thead><tbody id="budget-transactions"></tbody></table></div>
+        </article>
+      </section>
+
+      <section class="page" id="page-guidance">
+        <div class="guidance-heading">
+          <div class="guide-title"><span class="bot-icon">♧</span><div><h1>AI Budget Guidance</h1><p>Personalised, plain-language advice based on your spending pattern.</p></div></div>
+          <div class="risk-pill" id="guidance-risk"></div>
+        </div>
+        <article class="panel summary-panel">
+          <h2><span class="spark-icon">✣</span>Plain-Language Summary</h2>
+          <p id="summary-text"></p>
+        </article>
+        <article class="panel recommendations-panel">
+          <h2><span class="target-icon">◎</span>Recommendations for You</h2>
+          <div class="recommendations" id="recommendations"></div>
+        </article>
+        <article class="panel questions-panel">
+          <h2><span class="chat-icon">▱</span>Questions to ask your counsellor</h2>
+          <ul id="counsellor-questions"></ul>
+        </article>
+        <article class="panel counsellor-panel">
+          <div class="card-title-row"><h2><span class="people-icon">♧</span>Counsellor Analytics (Anonymised)</h2><span class="demo-chip">DEMO DATA</span></div>
+          <p>Group insights from analysed accounts (not individuals data).</p>
+          <div class="counsellor-grid">
+            <article><h3>Budget Risk Distribution</h3><div class="risk-donut"><div><strong>1,240</strong><span>Accounts</span></div></div><div class="risk-legend"><span><i class="low"></i>Low - 48%</span><span><i class="moderate"></i>Moderate - 32%</span><span><i class="high"></i>High - 20%</span></div></article>
+            <article><h3>Top Overspending Categories</h3><div id="overspending-bars"></div></article>
+          </div>
+        </article>
+      </section>
+
+      <section class="page" id="page-transactions">
+        <div class="content-heading"><div><h1>Transactions</h1><p>Review every transaction in the analysed statement.</p></div></div>
+        <article class="panel"><div class="table-wrap"><table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Amount</th></tr></thead><tbody id="all-transactions"></tbody></table></div></article>
+      </section>
+
+      <section class="page" id="page-counsellor">
+        <div class="content-heading"><div><h1>Counsellor Analytics</h1><p>Anonymised patterns across analysed accounts.</p></div></div>
+        <article class="panel counsellor-panel"><div class="counsellor-grid"><article><h3>Budget Risk Distribution</h3><div class="risk-donut"><div><strong>1,240</strong><span>Accounts</span></div></div></article><article><h3>Top Overspending Categories</h3><div id="overspending-bars-copy"></div></article></div></article>
+      </section>
+
+      <section class="page" id="page-settings">
+        <div class="content-heading"><div><h1>Settings</h1><p>Customise your FinSight workspace.</p></div></div>
+        <article class="panel settings-panel"><label>Currency</label><select><option>Indian Rupee (₹)</option></select><label>Statement file limit</label><select><option>10 MB</option></select></article>
+      </section>
+
+      <section class="page" id="page-upload">
+        <div class="content-heading"><div><h1>Upload Statement</h1><p>Add a bank statement for analysis.</p></div></div>
+        <article class="panel upload-panel" id="upload-panel">
+          <input type="file" id="file-copy" accept=".csv,.txt">
+          <label for="file-copy" class="choose-button large">Choose CSV file</label>
+          <p>CSV statements are analysed securely in your browser.</p>
+          <button class="primary-button" id="sample-copy">Load demo statement</button>
+        </article>
+      </section>
+
+      <textarea id="input" class="hidden" aria-hidden="true"></textarea>
+      <div class="error" id="error"></div>
+    </main>
+  </div>
+
+  <script src="js/analysis.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

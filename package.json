@@ -1,0 +1,14 @@
+{
+  "name": "finsight",
+  "version": "1.0.0",
+  "description": "FinSight: bank statement intelligence and budget risk analytics (static web app).",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/analysis.test.js",
+    "start": "npx --yes serve src"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
